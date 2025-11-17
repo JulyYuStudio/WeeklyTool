@@ -1,0 +1,86 @@
+{
+  "name": "weeklytool-markdown-smart-paste",
+  "displayName": "WeeklyTool Markdown Smart Paste",
+  "description": "拦截在 Markdown 中粘贴的 URL，解析网页 Title 并按 * 📄[Title](url) 插入（带确认）",
+  "version": "0.0.1",
+  "publisher": "JulyYu",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:JulyYuStudio/WeeklyTool.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "weeklytool.newWeekly",
+        "title": "New Weekly"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "weeklytool.newWeekly",
+          "group": "navigation"
+        }
+      ]
+    },
+    "pasteEditProviders": [
+      {
+        "viewType": "weeklytool.markdownSmartPaste",
+        "documentSelector": [
+          {
+            "language": "markdown"
+          }
+        ],
+        "pasteMimeTypes": [
+          "text/uri-list",
+          "text/plain"
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "WeeklyTool Markdown Smart Paste",
+      "properties": {
+        "weeklytool.smartPaste.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用在 Markdown 中智能粘贴 URL 的功能"
+        },
+        "weeklytool.smartPaste.fallbackFormat": {
+          "type": "boolean",
+          "default": false,
+          "description": "当未识别到特定上下文时,是否使用通用列表格式 '* [标题](url)' 插入"
+        },
+        "weeklytool.smartPaste.requestTimeoutMs": {
+          "type": "number",
+          "default": 5000,
+          "description": "获取网页 Title 的超时时间（毫秒）"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "lint": "echo 'no linter configured'"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.34",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.5",
+    "vsce": "^2.15.0"
+  }
+}
+
+
