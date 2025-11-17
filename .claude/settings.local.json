@@ -4,7 +4,9 @@
       "Bash(npx vsce package --baseContentUrl .)",
       "Bash(npm run compile:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: WeeklyTool VSCode Extension\n\nFeatures:\n- Feature 1: Smart Paste for Markdown URLs\n  - Auto-detect context and insert in different formats\n  - Article area: * 📄[Title](url)\n  - Other headers: **Title**  \\n url\n  - Fallback format: * [Title](url) (configurable)\n  - Smart empty line handling\n  \n- Feature 2: Quick Weekly Folder Creation\n  - Right-click \"New Weekly\" in explorer\n  - Auto-increment NoXX folder numbering\n  - Auto-create markdown file with template\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
