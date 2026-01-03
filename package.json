@@ -2,7 +2,7 @@
   "name": "weeklytool-markdown-smart-paste",
   "displayName": "WeeklyTool Markdown Smart Paste",
   "description": "拦截在 Markdown 中粘贴的 URL，解析网页 Title 并按 * 📄[Title](url) 插入（带确认）",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "JulyYu",
   "repository": {
     "type": "git",
