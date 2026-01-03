@@ -71,7 +71,7 @@ async function createNewWeekly(uri: vscode.Uri | undefined) {
     // Create markdown file with same name and template content
     const mdFileName = `${newFolderName}.md`;
     const mdFilePath = path.join(newFolderPath, mdFileName);
-    const templateContent = `## 📖好文章\n\n## 🎮好玩的\n\n## 🔨好工具\n\n## 📚好资源\n\n## 🎈优秀开源\n\n## 📝记录`;
+    const templateContent = `## 📕精选文章\n\n## 🤖AI前沿\n\n## 🔨实用工具\n\n## 📚宝藏资源\n\n## 💡优秀作品\n\n## 🎮好玩有趣\n\n## 📝日常记录`;
     fs.writeFileSync(mdFilePath, templateContent, 'utf8');
 
     // Open the newly created markdown file

@@ -74,7 +74,7 @@ type ContextType = 'article' | 'other' | null;
 
 function isEligibleContext(document: vscode.TextDocument, position: vscode.Position): ContextType {
   // Scan upwards to determine context:
-  //   - 'article': for "## 📖好文章" or list item starting with "* 📄"
+  //   - 'article': for "## 📕精选文章" or list item starting with "* 📄"
   //   - 'other': for other "##" headers
   //   - null: no eligible context
   for (let lineNum = position.line; lineNum >= 0; lineNum--) {
@@ -83,7 +83,7 @@ function isEligibleContext(document: vscode.TextDocument, position: vscode.Posit
       // Skip empty lines and continue scanning upwards
       continue;
     }
-    if (lineText.trim() === '## 📖好文章') {
+    if (lineText.trim() === '## 📕精选文章') {
       return 'article';
     }
     if (lineText.trim().startsWith('* 📄')) {
