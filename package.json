@@ -23,6 +23,14 @@
       {
         "command": "weeklytool.newWeekly",
         "title": "New Weekly"
+      },
+      {
+        "command": "weeklytool.base64Encode",
+        "title": "Base64加密"
+      },
+      {
+        "command": "weeklytool.base64Decode",
+        "title": "Base64解密"
       }
     ],
     "menus": {
@@ -30,6 +38,18 @@
         {
           "command": "weeklytool.newWeekly",
           "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "weeklytool.base64Encode",
+          "group": "1_modification",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "weeklytool.base64Decode",
+          "group": "1_modification",
+          "when": "editorHasSelection"
         }
       ]
     },
